@@ -24,7 +24,7 @@ class Fbx
 		XMFLOAT4 diffuse;//鏡面反射係数　ベクトル
 		XMFLOAT4 specular;//鏡面反射係数　ベクトル(色）
 		XMFLOAT4 shininess; //鏡面反射のパラメータ スカラ
-		XMFLOAT4 ambient; //環境光の反射係数（環境光の色？）ベクトル
+		XMFLOAT4 ambient; //環境光の反射係数（環境光の色）ベクトル
 		XMFLOAT4 factor; //スカラ
 	};
 

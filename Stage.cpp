@@ -27,7 +27,6 @@ Stage::Stage(GameObject* parent)
     :GameObject(parent, "Stage"), pConstantBuffer_(nullptr)
 {
     hModel_ = -1;
-    hBunny_ = -1;
 
     hMaru_[1] = -1;
     hMaru_[2] = -1;

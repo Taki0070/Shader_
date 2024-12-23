@@ -18,8 +18,6 @@ struct CONSTBUFFER_STAGE
 class Stage : public GameObject
 {
     int hModel_;    
-    int hBunny_;
-
     float hMaru_[4];
 
     ID3D11Buffer* pConstantBuffer_;

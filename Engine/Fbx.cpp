@@ -149,7 +149,7 @@ void Fbx::InitIndex(fbxsdk::FbxMesh* mesh)
 		//全ポリゴン
 		for (DWORD poly = 0; poly < polygonCount_; poly++)
 		{
-			//あるマテリアルを持ったポリゴンのリストをとってきて、頂点をリストアップ
+			//あるマテリアルを持ったポリゴンのリスト,頂点をリストアップ
 			FbxLayerElementMaterial* mtl = mesh->GetLayer(0)->GetMaterials();
 			int mtlId = mtl->GetIndexArray().GetAt(poly);
 
@@ -226,7 +226,6 @@ void Fbx::InitMaterial(fbxsdk::FbxNode* pNode)
 			FbxFileTexture* textureInfo = lProperty.GetSrcObject<FbxFileTexture>(0);
 			const char* textureFilePath = textureInfo->GetRelativeFileName();
 
-			//ファイル名+拡張だけにする
 			//char name[_MAX_FNAME];	//ファイル名
 			//char ext[_MAX_EXT];	//拡張子
 			//_splitpath_s(textureFilePath, nullptr, 0, nullptr, 0, name, _MAX_FNAME, ext, _MAX_EXT);
@@ -251,8 +250,7 @@ void Fbx::InitMaterial(fbxsdk::FbxNode* pNode)
 			if (pMaterial->GetClassId().Is(FbxSurfacePhong::ClassId))
 			{
 				FbxDouble3 specular = pMaterial->Specular;
-				FbxDouble shininess = pMaterial->Shininess; //4つとも同じ値でセット
-				//ここで、自分のpMaterialList_[i]に値を設定
+				FbxDouble shininess = pMaterial->Shininess; 
 				pMaterialList_[i].specular = { (float)specular[0],(float)specular[1], (float)specular[2], 1.0f };
 				pMaterialList_[i].shininess = { (float)shininess,(float)shininess, (float)shininess, 1.0 };
 			}
@@ -277,8 +275,7 @@ void Fbx::InitMaterial(fbxsdk::FbxNode* pNode)
 			if (pMaterial->GetClassId().Is(FbxSurfacePhong::ClassId))
 			{
 				FbxDouble3 specular = pMaterial->Specular;
-				FbxDouble shininess = pMaterial->Shininess; //4つとも同じ値でセット
-				//ここで、自分のpMaterialList_[i]に値を設定
+				FbxDouble shininess = pMaterial->Shininess; 
 				pMaterialList_[i].specular = { (float)specular[0],(float)specular[1], (float)specular[2], 1.0f };
 				pMaterialList_[i].shininess = { (float)shininess,(float)shininess, (float)shininess, 1.0 };
 			}
@@ -297,7 +294,7 @@ void Fbx::Draw(Transform& transform)
 {
 	Update();
    //	Direct3D::SetShader(SHADER_POINT);
-	transform.Calclation();//トランスフォームを計算
+	transform.Calclation();
 	
 
 	for (int i = 0; i < materialCount_; i++)
