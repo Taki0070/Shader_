@@ -44,7 +44,6 @@ Stage::~Stage()
 void Stage::Initialize()
 {
     hModel_ = Model::Load("Assets\\Ball.fbx");
-    hBunny_ = Model::Load("Assets\\maru.fbx");
 
     hMaru_[1] = Model::Load("Assets\\maru.fbx");
     hMaru_[2] = Model::Load("Assets\\maru2.fbx");
@@ -127,8 +126,8 @@ void Stage::Draw()
     Model::Draw(hModel_);
 
 
-   static Transform tr;
-   tr.rotate_.y += 1.0f;
+    static Transform tr;
+    tr.rotate_.y += 1.0f;
 
     for (int i = 1; i <= 3; i++) {
         tr.scale_ = { 0.25f, 0.25f, 0.25f };
