@@ -130,10 +130,10 @@ void Stage::Draw()
    static Transform tr;
    tr.rotate_.y += 1.0f;
 
-      
-    for (int i = 0; i < 4; i++) {
+    for (int i = 1; i <= 3; i++) {
         tr.scale_ = { 0.25f, 0.25f, 0.25f };
         tr.position_ = { 1.0f * i, 0.5f, 0.0f };
+
         Model::SetTransform(hMaru_[i], tr);
         Model::Draw(hMaru_[i]);  
     }
