@@ -137,7 +137,6 @@ void Stage::Draw()
         Model::Draw(hMaru_[i]);  
     }
 
-    
 
 }
 
