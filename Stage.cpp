@@ -127,24 +127,15 @@ void Stage::Draw()
     Model::Draw(hModel_);
 
 
-
-    static Transform tbunny;
-    tbunny.scale_ = { 0.25,0.25,0.25 };
-    tbunny.position_ = { 0, 0.5, 0 };
-    tbunny.rotate_.y += 1.0f;
-    Model::SetTransform(hBunny_, tbunny);
-    Model::Draw(hBunny_);
-
    static Transform tr;
    tr.rotate_.y += 1.0f;
 
       
-    for (int i = 1; i <= 3; i++) {
+    for (int i = 0; i < 4; i++) {
         tr.scale_ = { 0.25f, 0.25f, 0.25f };
         tr.position_ = { 1.0f * i, 0.5f, 0.0f };
-
         Model::SetTransform(hMaru_[i], tr);
-        Model::Draw(hMaru_[i]);  // hMaru_[i] ‚ð•`‰æ
+        Model::Draw(hMaru_[i]);  
     }
 
     
